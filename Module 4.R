@@ -30,6 +30,25 @@ plotBox <- function(df,colm){
   }
 }
 
+# This function is similar to plotBox, but is only interested in returning a mean value,df is the dataframe,colm is the characteristic
+# of the patient we are interested in and oz is either 1 or 0 based on the MDs overall rating.
+meanofMD <- function(df,colm,oz) {
+  if (colm !=1 && colm!=2){return("Please pick either colm 1 or 2")} 
+  docs <-vector() 
+  zeros = vector() 
+  ones = vector()
+  for(i in 1:nrow(df)){
+    docs<- c(docs,(sum(df[i,3:5],na.rm = TRUE)))
+    if(docs[i] >1){ones <- c(ones,df[i,colm])} else{zeros <- c(zeros,df[i,colm])}}
+  if (oz == 0){return(mean(zeros))}
+  else{return(mean(ones))}
+}  
+  
+meanofMD(docdf,2,1)
+meanofMD(docdf,2,0)
+meanofMD(docdf,1,1)
+meanofMD(docdf,1,0)
+
 plotBox(docdf,1)
 plotBox(docdf,2)
 hist(Freq)
