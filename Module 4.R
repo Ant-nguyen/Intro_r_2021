@@ -6,9 +6,9 @@ Final <- c(0,1,0,1,0,1,0,1,1,1)
 docdf <- data.frame(Freq,BP,First,Second,Final,stringsAsFactors = FALSE)
 
 
-# This function function will create a Boxplot based on MDs' rating of either Freq or Bp based on colm number
+# This function will create a Boxplot based on MDs' rating of either Freq or Bp based on colm number
 plotBox <- function(df,colm){
-  if (colm !=1 && colm!=2){return("Please pick either colm 1 or 2")} # A Check to make sure users enter either 1 or 2 for colm
+  if (colm !=1 && colm!=2){return("Please enter either 1 or 2 for colm")} # A Check to make sure users enter either 1 or 2 for colm
   docs <-vector() 
   zeros = vector() 
   ones = vector()
@@ -33,7 +33,8 @@ plotBox <- function(df,colm){
 # This function is similar to plotBox, but is only interested in returning a mean value,df is the dataframe,colm is the characteristic
 # of the patient we are interested in and oz is either 1 or 0 based on the MDs overall rating.
 meanofMD <- function(df,colm,oz) {
-  if (colm !=1 && colm!=2){return("Please pick either colm 1 or 2")} 
+  if (colm !=1 && colm!=2){return("Please enter either 1 or 2 for colm")}
+  if (oz != 1 && oz !=0 ){return("Please enter either 1 or 0 for oz")}
   docs <-vector() 
   zeros = vector() 
   ones = vector()
@@ -43,7 +44,7 @@ meanofMD <- function(df,colm,oz) {
   if (oz == 0){return(mean(zeros))}
   else{return(mean(ones))}
 }  
-  
+
 meanofMD(docdf,2,1)
 meanofMD(docdf,2,0)
 meanofMD(docdf,1,1)
