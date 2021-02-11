@@ -1,0 +1,13 @@
+A <- matrix(1:100, nrow=10)
+B <- matrix(1:1000, nrow=10)
+det(A)
+solve(A)
+a <-t(A)
+det(a)
+solve(a)
+solve(a,tol= 1e-20)
+b <- t(B)
+Bb <- B%*%b
+det(Bb)
+solve(Bb)
+solve(Bb,tol = 1e-23)
