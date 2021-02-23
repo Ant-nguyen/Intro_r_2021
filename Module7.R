@@ -29,3 +29,4 @@ print.template <- function(item){
 setClass("coding",representation(DNAseq = "character",size = "numeric",Fiveto3 ="logical"))
 setClass("template",representation(DNAseq = "character",size = "numeric",Fiveto3 ="logical"))
 capsid <- new("coding",DNAseq= substr(HPV10,443,1375),size = nchar(substr(HPV10,443,1375)),Fiveto3 = TRUE)
+setMethod("show","coding",function(object){ cat("5\'",object@DNAseq,"3\'")})
