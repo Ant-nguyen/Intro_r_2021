@@ -2,6 +2,7 @@ fileName <- 'HPV-10.txt' #Text file with the full HPV10 genome
 HPV10 <- readChar(fileName,file.info(fileName)$size)
 print(HPV10)
 summary(HPV10)
+substr(HPV10,443,1375) # minor capsid protein 443-1375 of the whole genome
 
 #s3 class creation
 capsid <- list(DNAseq= substr(HPV10,443,1375),size = nchar(substr(HPV10,443,1375)))
