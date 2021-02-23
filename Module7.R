@@ -5,7 +5,7 @@ summary(HPV10)
 substr(HPV10,443,1375) # minor capsid protein 443-1375 of the whole genome
 
 #s3 class creation
-capsid <- list(DNAseq= substr(HPV10,443,1375),size = nchar(substr(HPV10,443,1375)))
+capsid <- list(DNAseq= substr(HPV10,443,1375),size = nchar(substr(HPV10,443,1375)),Fiveto3 = TRUE)
 class(capsid) <-"coding"
 # s3 Constructor function for our classes
 Coding <- function(DNA){
