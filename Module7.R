@@ -19,14 +19,14 @@ Template <- function(DNA){
 }
 #custom print method for our new classes
 print.coding <- function(item){
-  cat("5\'",item$DNAseq,"3\'")
+  cat("5\'",toupper(item$DNAseq),"3\'")
 }
 
 print.template <- function(item){
-  cat("3\'",item$DNAseq,"5\'")
+  cat("3\'",toupper(item$DNAseq),"5\'")
 }
 # s4 class creation
 setClass("coding",representation(DNAseq = "character",size = "numeric",Fiveto3 ="logical"))
 setClass("template",representation(DNAseq = "character",size = "numeric",Fiveto3 ="logical"))
 capsid <- new("coding",DNAseq= substr(HPV10,443,1375),size = nchar(substr(HPV10,443,1375)),Fiveto3 = TRUE)
-setMethod("show","coding",function(object){ cat("5\'",object@DNAseq,"3\'")})
+setMethod("show","coding",function(object){ cat("5\'",toupper(object@DNAseq),"3\'")})
