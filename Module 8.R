@@ -1,0 +1,8 @@
+rawfile <- read.table(file.choose(),header =TRUE, sep=",")
+install.packages("plyr")
+library(plyr)
+y = ddply(rawfile,"Sex",transform,Grade.Average= mean(Grade))
+write.table(y,"Sorted_Avg.txt",sep = ",")
+new1 <-subset(rawfile,grepl("[iI]",rawfile$Name))
+rownames(new1) <- seq(length=nrow(new1))
+write.table(new1,"DataSubsetI",sep=",")
