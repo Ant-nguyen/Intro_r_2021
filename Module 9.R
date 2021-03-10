@@ -13,10 +13,13 @@ xyplot(viq~piq, wong,
        grid = TRUE,
        groups = sex, auto.key = TRUE,
        type = c("p","r"), lwd= 3)
-xyplot(viq~piq, wong,
+xyplot(viq~piq|sex, wong,#Separate the sexes
        grid = TRUE,
        groups = sex, auto.key = TRUE,
        type = c("p","smooth"), lwd= 3)
+xyplot(viq~piq|sex, wong, #create a smooth scatter 
+       grid = TRUE,
+       panel = panel.smoothScatter )
 
 #Using ggplot2
 library(ggplot2)
