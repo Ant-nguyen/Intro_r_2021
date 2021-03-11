@@ -15,7 +15,7 @@ xyplot(viq~piq, wong,
        type = c("p","r"), lwd= 3)
 xyplot(viq~piq|sex, wong,#Separate the sexes
        grid = TRUE,
-       groups = sex, auto.key = TRUE,
+       groups = sex,
        type = c("p","smooth"), lwd= 3)
 xyplot(viq~piq|sex, wong, #create a smooth scatter 
        grid = TRUE,
@@ -26,4 +26,4 @@ library(ggplot2)
 ourplot <- ggplot(wong,aes(piq,viq)) + geom_point()
 ourplot + geom_smooth(method = 'lm') 
 ourplot + geom_point(aes(col=sex)) + geom_smooth( method = "lm",se = FALSE, aes(group = sex, color = sex))
-ourplot + geom_point(aes(col=sex)) + geom_smooth(se = FALSE, aes(group = sex, color = sex))
+ourplot + geom_point(aes(col=sex)) + geom_smooth( method = "lm",se = FALSE, aes(group = sex, color = sex)) + facet_grid(~sex)
