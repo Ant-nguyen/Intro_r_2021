@@ -1,0 +1,13 @@
+Package: Testing
+Type: Package
+Title: Seeing How Packages are Made
+Version: 0.0.0.9000
+Author: person("Anthony","Nguyen",email ="AnthonyNguyen@usf.edu",role = c("aut","cre"))
+Maintainer: Anthony Nguyen <AnthonyNguyen@usf.edu>
+Description: Testing to see how we can create a description for a package.
+    No functions, just made to allow me to play around in R to see how we
+    start to make a package.
+Depends: R (>= 3.1.2)
+License: GNU
+Encoding: UTF-8
+LazyData: true
