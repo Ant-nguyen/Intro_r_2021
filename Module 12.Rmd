@@ -20,6 +20,7 @@ Testing echo = FALSE.
 # Testing different Markdown syntax and their affect on presented text
 > What will this do?
 
+$$E=mc^2$$
 ## or this?
 
 ### Testing to see how library works with R Markdown
@@ -40,4 +41,8 @@ d <-data.frame(students,age,gpa)
 d
 xyplot(age~gpa)
 ```
-$$E=mc^2$$
+
+```{r,fig.align='center'}
+xyplot(age~gpa)
+```
+
