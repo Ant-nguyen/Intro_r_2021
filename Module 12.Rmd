@@ -1,0 +1,43 @@
+---
+title: "Module 12"
+author: "Anthony"
+date: "4/2/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+First I want to see what default R code will do.
+```{r}
+#Hello World
+```
+Testing echo = FALSE.
+```{r,echo=FALSE}
+#Hello World
+```
+# Testing different Markdown syntax and their affect on presented text
+> What will this do?
+
+## or this?
+
+### Testing to see how library works with R Markdown
+```{r}
+library(ggplot2)
+
+```
+Attempting to remove warning
+```{r,warning=FALSE}
+library(lattice)
+```
+### Creating Data frame
+```{r,echo=FALSE}
+students <- c("Tom","Mark","Jen","Alice","Roy")
+age <- c(18,20,25,19,22)
+gpa <- c(3.0,3.5,3.8,3.4,3.6)
+d <-data.frame(students,age,gpa)
+d
+xyplot(age~gpa)
+```
+$$E=mc^2$$
